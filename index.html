@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Werewolf — Pass & Play</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header class="topbar">
+      <h1>Werewolf</h1>
+      <button id="btn-help" class="icon-btn">?</button>
+    </header>
+
+    <section id="setup" class="card">
+      <h2>Setup Players</h2>
+      <div class="row">
+        <label>Players: <input id="player-count" type="number" min="3" max="15" value="6"></label>
+        <button id="btn-generate" class="btn">Generate</button>
+      </div>
+      <p class="muted">Tap a name to edit. Add or remove players with the controls above.</p>
+      <ul id="player-list"></ul>
+      <div class="row">
+        <button id="btn-start" class="btn primary">Start Game</button>
+      </div>
+    </section>
+
+    <section id="deck" class="hidden">
+      <div class="narrator">Pass the device. Each player, swipe up to reveal your role.</div>
+      <div id="card-area" class="card big-card">
+        <div id="role-card" class="role-card">
+          <div class="card-front">
+            <div class="player-name" id="reveal-name"></div>
+            <div class="swipe-hint">Swipe up to reveal</div>
+          </div>
+          <div class="card-back">
+            <div class="role-title" id="role-title"></div>
+            <div class="role-desc" id="role-desc"></div>
+            <div class="role-art">🌒</div>
+          </div>
+        </div>
+        <div class="row card-controls">
+          <button id="btn-skip" class="btn">Skip / Pass</button>
+          <button id="btn-next-reveal" class="btn primary hidden">Done — Pass</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gameboard" class="hidden">
+      <div id="phase-banner" class="phase day">Welcome</div>
+      <div id="players-grid" class="players-grid"></div>
+
+      <div id="controls" class="controls">
+        <button id="btn-night" class="btn primary">Narrator: Start Night</button>
+        <button id="btn-vote" class="btn">Start Day Vote</button>
+      </div>
+    </section>
+
+    <!-- overlays -->
+    <div id="overlay" class="overlay hidden"></div>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <div id="modal-header" class="modal-header">Modal</div>
+        <div id="modal-body" class="modal-body"></div>
+        <div class="modal-actions" id="modal-actions"></div>
+      </div>
+    </div>
+
+    <footer class="footer muted">Pass-and-play • Mobile-first • Premium UI</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+            </html>
